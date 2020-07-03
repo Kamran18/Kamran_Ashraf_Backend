@@ -6,7 +6,10 @@ const fs = require('fs')
 router.post('/', (req, res)=>{
     const H = req.body.height, e = req.body.e
     giveBounceAndGraphData(H, e)
-    .then(data => {res.send(data)})
+    .then(data => {
+        console.log(data)
+        res.send(data)
+    })
     .catch(err => {res.send(err)})
 })
 
